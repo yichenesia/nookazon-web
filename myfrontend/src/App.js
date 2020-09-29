@@ -1,26 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import {Services} from './Services';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+var services = new Services();
+
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+        productlist: []
+    }
+  }
+
+  componentDidMount = () => {
+    services.getproductlist(data => {
+      if (data.status === "failed") {
+        console.log("Data not found")
+      }
+      else {
+        this.setState({
+          productlist : data.productlist
+        });
+        console.log("Good")
+      }
+    }) 
+  };
+
+  render(){
+    return(
+      <div className="App">
+        Hello World!
+        
+      </div>)
+  }
 }
+
 
 export default App;

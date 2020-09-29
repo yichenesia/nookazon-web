@@ -1,10 +1,10 @@
+var cors = require('cors')
 const express = require('express')
 const app = express()
+app.use(cors())
+
 const port = 5000
 const fs = require('fs');
-
-
-
 
 
 app.get('/productlist', (req, res) => {

@@ -1,5 +1,5 @@
 {
-   "list": [{"name": "NSwitch", "price": 300, "count": 0},
-    {"name": "PS5", "price": 400, "count": 0},
-    {"name": "XBox", "price": 500, "count": 0}]
+   "list": [{"id": 1,"name": "NSwitch", "price": 300, "inventory": 0, "img": "nswitch.png"},
+    {"id": 2, "name": "PS5", "price": 400, "inventory": 100, "img": "ps5.png"},
+    {"id": 3,"name": "XBox", "price": 500, "inventory": 50, "img": "xbox.png"}]
 }
