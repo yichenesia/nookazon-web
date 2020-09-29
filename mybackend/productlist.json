@@ -2,5 +2,4 @@
    "list": [{"name": "NSwitch", "price": 300, "count": 0},
     {"name": "PS5", "price": 400, "count": 0},
     {"name": "XBox", "price": 500, "count": 0}]
-
 }
