@@ -29,7 +29,7 @@ class CartItem extends Component {
 
     render(){
     return (
-        <div>
+        <div className="note">
             <h1>{this.props.data.name}</h1>
             <div>
                 <img className="one" src={require(`${this.props.data.img}`)} alt={this.props.data.name} height="5%"/>
