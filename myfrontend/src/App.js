@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import {Services} from './Services';
+import CartItem from './CartItem';
 
 var services = new Services();
 
@@ -29,8 +30,13 @@ class App extends Component {
   render(){
     return(
       <div className="App">
-        Hello World!
-        
+        <h1>Bestest Buy</h1>
+       {this.state.productlist.map((value, index) => (
+          <CartItem data={value}/>
+        ))}
+
+
+
       </div>)
   }
 }
