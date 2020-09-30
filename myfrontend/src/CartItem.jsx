@@ -30,14 +30,14 @@ class CartItem extends Component {
     render(){
     return (
         <div className="note">
-            <h1>{this.props.data.name}</h1>
+            <h1 className="itemname">{this.props.data.name}</h1>
             <div>
                 <img className="one" src={require(`${this.props.data.img}`)} alt={this.props.data.name} height="5%"/>
             </div>
-            <p>${this.props.data.price}</p>
-            <p>Number in Cart: {this.state.numInCart}</p>
-            <button onClick={this.addToCart}>Add to Cart</button>
-            <button onClick={this.removeFromCart}>Remove from Cart</button>
+            <p className="price">Price: ${this.props.data.price}</p>
+            <p className="amount">Number in Cart: {this.state.numInCart}</p>
+            <button className="addToCart" onClick={this.addToCart}>Add to Cart</button>
+            <button className="removeFromCart" onClick={this.removeFromCart}>Remove from Cart</button>
         </div>
 
     );}

@@ -113,17 +113,20 @@ class App extends Component {
   render(){
     return(
       <div className="App">
-        <div><header><h1 className="header">Bestest Buy</h1></header></div>
+        <div><header><h1 className="header">NOOKAZON</h1></header></div>
         {this.state.showProductListPage &&
         <div>
           <div className="relative"><label><h2>Please enter your username: </h2></label></div>
+          
           <input type="text" name="name" value={this.state.username} onChange={this.handleUsernameChange}/>
           {this.state.productlist.map((value, index) => (<CartItem data={value}/>))}
-          <button onClick={this.togglePage}>Checkout</button>
+
+          <button className="submit" onClick={this.togglePage}>Checkout</button>
         </div>}
+
         {this.state.showCheckoutPage && <div>
-        <button onClick={this.handleDiscountAll}>Add 50% Discount to all items</button>
-        <div><label>Username: {this.state.username}</label></div>
+        <button className="discount" onClick={this.handleDiscountAll}>Add 50% Discount to all items</button>
+        <div><label><h2>Username: {this.state.username}</h2></label></div>
         
         <TableContainer component={Paper}>
           <TableHead>
@@ -165,8 +168,8 @@ class App extends Component {
           </TableBody>
           
         </TableContainer>
-          <button onClick={this.togglePage}>Back to Products</button>
-          <button onClick={this.finishOrder}>Finish Order</button>
+          <button className="back" onClick={this.togglePage}>Back to Products</button>
+          <button className="submit2" onClick={this.finishOrder}>Finish Order</button>
         </div>}
         
       </div>)

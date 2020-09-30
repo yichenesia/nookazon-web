@@ -1,5 +1,7 @@
 {
-   "list": [{"id": 1,"name": "Nintendo Switch", "price": 300, "inventory": 0, "img": "./nswitch.jpg", "count" : 0, "tax": 0, "subtotal": 0, "linetotal": 0, "yousave": 0},
-    {"id": 2, "name": "PS5", "price": 400, "inventory": 100, "img": "./ps5.jpg", "count" : 0, "tax": 0, "subtotal": 0,  "linetotal": 0, "yousave": 0 },
-    {"id": 3,"name": "XBox", "price": 500, "inventory": 50, "img": "./xbox.jpg", "count" : 0, "tax": 0, "subtotal": 0,  "linetotal": 0, "yousave": 0}]
+   "list": [{"id": 1,"name": "Tom Nook", "price": 300, "img": "./tom.png", "count" : 0, "tax": 0, "subtotal": 0, "linetotal": 0, "yousave": 0},
+    {"id": 2, "name": "Isabelle", "price": 400, "img": "./isabelle.png", "count" : 0, "tax": 0, "subtotal": 0,  "linetotal": 0, "yousave": 0 },
+    {"id": 3,"name": "Lyle", "price": 500, "img": "./lyle.png", "count" : 0, "tax": 0, "subtotal": 0,  "linetotal": 0, "yousave": 0},
+    {"id": 3,"name": "K.K. Slider", "price": 600, "img": "./kk.png", "count" : 0, "tax": 0, "subtotal": 0,  "linetotal": 0, "yousave": 0}
+]
 }

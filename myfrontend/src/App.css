@@ -43,7 +43,7 @@ img.one {
 }
 
 header {
-  background-color: #f5ba13;
+  background-color: #0f3057;
   font-size: 50px;
   margin: auto -16px;
   padding: 16px 32px;
@@ -51,9 +51,13 @@ header {
 }
 
 header h1 {
-  color: #000000;
-  font-family: "Stencil Std";
+  color: #e7e7de;
+  font-family: "Calibri Light";
   font-weight: 200;
+}
+
+h1.itemname {
+  font-size: 60px;
 }
 
 div.relative {
@@ -64,6 +68,24 @@ div.relative {
 
 h2.username {
   font-family: "Trattatello";
+}
+
+p.price {
+  font-family: "Century Gothic";
+  color: #ffffff;
+  background-color:#00587a;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
+}
+
+p.amount {
+  font-family: "Century Gothic";
+  color: #ffffff;
+  background-color:#008891;
+  border-radius: 7px;
+  box-shadow: 0 2px 5px #ccc;
+  padding: 10px;
 }
 
 .note {
@@ -77,12 +99,149 @@ h2.username {
   float: center;
 }
 .note h1 {
-  font-size: 1.1em;
-  margin-bottom: 6px;
+  margin-bottom: 60px;
 }
 .note p {
   font-size: 1.1em;
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
+}
+
+.removeFromCart {
+	background-color:#b83b5e;
+	border-radius:3px;
+	border:1px solid #942911;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+  padding:6px 24px;
+  margin-left: 30px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #854629;
+}
+.removeFromCart:hover {
+	background-color:#6a2c70;
+}
+.removeFromCart:active {
+	position:relative;
+	top:1px;
+}
+
+.addToCart {
+	background-color:#3e978b;
+	border-radius:3px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#FFFFFF;
+	font-family:Arial;
+	font-size:13px;
+	margin-right: 10px;
+	margin-top: 10px;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.addToCart:hover {
+	background-color:#2ec1ac;
+}
+.addToCart:active {
+	position:relative;
+	top:1px;
+}
+
+.submit {
+	background-color:#f0a500;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #000000;
+}
+.submit:hover {
+	background-color:#ac4b1c;
+}
+.submit:active {
+	position:relative;
+	top:1px;
+}
+
+.submit2 {
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+  color:#333333;
+  margin-top: 50px;
+  margin-left: 50px;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+.submit2:hover {
+	background-color:#ffab23;
+}
+.submit2:active {
+	position:relative;
+	top:1px;
+}
+
+.back {
+	background-color:#33bdef;
+	border-radius:6px;
+	border:1px solid #057fd0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #5b6178;
+}
+.back:hover {
+	background-color:#019ad2;
+}
+.back:active {
+	position:relative;
+	top:1px;
+}
+
+.discount {
+	background-color:#f56a79;
+	border-radius:4px;
+	border:1px solid #ffffff;
+	display:inline-block;
+  cursor:pointer;
+  margin-top: 20px;
+  margin-bottom: 20px;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:6px 15px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #b23e35;
+}
+.discount:hover {
+	background-color:#ff414d;
+}
+.discount:active {
+	position:relative;
+	top:1px;
 }
