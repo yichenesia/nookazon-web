@@ -113,10 +113,10 @@ class App extends Component {
   render(){
     return(
       <div className="App">
-        <h1>Bestest Buy</h1>
+        <div><header><h1 className="header">Bestest Buy</h1></header></div>
         {this.state.showProductListPage &&
         <div>
-          <label>Please enter your username: </label>
+          <div className="relative"><label><h2>Please enter your username: </h2></label></div>
           <input type="text" name="name" value={this.state.username} onChange={this.handleUsernameChange}/>
           {this.state.productlist.map((value, index) => (<CartItem data={value}/>))}
           <button onClick={this.togglePage}>Checkout</button>

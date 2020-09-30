@@ -41,3 +41,27 @@ img.one {
   height: 30%;
   width: 30%;
 }
+
+header {
+  background-color: #f5ba13;
+  font-size: 50px;
+  margin: auto -16px;
+  padding: 16px 32px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+  color: #000000;
+  font-family: "Stencil Std";
+  font-weight: 200;
+}
+
+div.relative {
+  margin-top:50px;
+  position: static;
+  left: 30px;
+}
+
+h2.username {
+  font-family: "Trattatello";
+}
