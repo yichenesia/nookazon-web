@@ -9,7 +9,9 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-        productlist: []
+        productlist: [],
+        showProductListPage: true,
+        showCheckoutPage: false
     }
   }
 
@@ -27,14 +29,29 @@ class App extends Component {
     }) 
   };
 
+  togglePage = () => {
+    this.setState({
+      showProductListPage: !this.state.showProductListPage,
+      showCheckoutPage: !this.state.showCheckoutPage,
+    })
+    var shoppingCartList = this.state.productlist.filter(item => item.count > 0);
+  }
+
   render(){
     return(
       <div className="App">
         <h1>Bestest Buy</h1>
-       {this.state.productlist.map((value, index) => (
-          <CartItem data={value}/>
-        ))}
-
+        {this.state.showProductListPage &&
+        <div>
+          {this.state.productlist.map((value, index) => (<CartItem data={value}/>))}
+          <button onClick={this.togglePage}>Checkout</button>
+        </div>}
+        {this.state.showCheckoutPage &&
+        <div>
+          
+          <button onClick={this.togglePage}>Back to Products</button>
+        </div>}
+        
 
 
       </div>)

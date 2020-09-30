@@ -14,16 +14,17 @@ class CartItem extends Component {
         this.setState({numInCart: this.state.numInCart + 1})
     
 
-        // this.props.data.count++;
+        this.props.data.count++;
         
         
     }
 
     
     removeFromCart = () => {
+        if (this.state.numInCart > 0){
         this.setState({numInCart: this.state.numInCart - 1})
-        // this.props.data.count--;
-        
+        this.props.data.count--;
+        }
     }
 
     render(){
