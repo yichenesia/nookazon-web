@@ -7,16 +7,30 @@ const port = 5000
 const fs = require('fs');
 
 app.post('/saveuserorder', (req, res) => {
-  console.log(req);
-  console.log(req.body);
-  const content = req.body;
-  fs.writeFile('userorder.json', content, err => {
-    if (err) {
-      console.error(err)
-      return
-    }
-    //file written successfully
-  })
+  let body = [];
+  req.on('data', (chunk) => {
+    body.push(chunk);
+  }).on('end', () => {
+    body = Buffer.concat(body).toString();
+    // at this point, `body` has the entire request body stored in it as a string
+    var parsedBody = JSON.parse(body);
+    let rawdata = fs.readFileSync('userorder.json');
+    var items = JSON.parse(rawdata);  //parse the JSON
+    items.push({ 
+        "id": (new Date().getTime()), "userOrder": parsedBody
+    });
+
+    var txt = JSON.stringify(items);  //reserialize to JSON
+
+    fs.writeFile('userorder.json', txt, err => {
+      if (err) {
+        console.error(err)
+        return res.json({"status": "failed"});
+      }
+      return res.json({"status": "ok"});
+      //file written successfully
+    })
+  });
 })
 
 app.get('/productlist', (req, res) => {

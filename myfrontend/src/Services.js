@@ -7,8 +7,19 @@ export class Services {
         axios.get(rootURL + "productlist").then(function (response) {
             callback({"status": "ok", "productlist": response.data})
         }
-).catch(function (error) {
-    return {"status": "failed", "error": error}
+        ).catch(function (error) {
+            return {"status": "failed", "error": error}
         })
-    }
+    };
+
+    saveuserorder (userOrder, callback) {
+        axios.post(rootURL + "saveuserorder", userOrder).then(function (response) {
+            callback({"status": "ok"})
+        }
+        ).catch(function (error) {
+            return {"status": "failed", "error": error}
+        })
+
+    };
+
 }

@@ -14,12 +14,6 @@ import CartItem from './CartItem';
 
 var services = new Services();
 
-const useStyles = makeStyles({
-  table: {
-    minWidth: 650,
-  },
-});
-
 class App extends Component {
   constructor(){
     super();
@@ -28,7 +22,8 @@ class App extends Component {
         shoppingCartList: [],
         showProductListPage: true,
         showCheckoutPage: false,
-        total: {"subtotal": 0, "tax": 0, "linetotal": 0, "yousave": 0}
+        total: {"subtotal": 0, "tax": 0, "linetotal": 0, "yousave": 0},
+        username: ""
     }
   }
 
@@ -89,18 +84,47 @@ class App extends Component {
     })
   }
 
+  finishOrder = () => {
+    var userOrder = {
+      username: this.state.username,
+      shoppingCartList: this.state.shoppingCartList,
+      total: this.state.total
+    };
+
+    services.saveuserorder(userOrder, data => {
+      if (data.status === "failed") {
+        console.log("Data not found");
+      }
+      else {
+        this.setState({
+          showProductListPage: !this.state.showProductListPage,
+          showCheckoutPage: !this.state.showCheckoutPage,
+        });
+        console.log("Good");
+      }
+    }) 
+
+  }
+
+  handleUsernameChange = (event) => {
+    this.setState({"username": event.target.value});
+  }
+
   render(){
     return(
       <div className="App">
         <h1>Bestest Buy</h1>
         {this.state.showProductListPage &&
         <div>
+          <label>Please enter your username: </label>
+          <input type="text" name="name" value={this.state.username} onChange={this.handleUsernameChange}/>
           {this.state.productlist.map((value, index) => (<CartItem data={value}/>))}
           <button onClick={this.togglePage}>Checkout</button>
         </div>}
         {this.state.showCheckoutPage && <div>
         <button onClick={this.handleDiscountAll}>Add 50% Discount to all items</button>
-        {/* <button>Add 70% Discount to Nintendo Switch</button> */}
+        <div><label>Username: {this.state.username}</label></div>
+        
         <TableContainer component={Paper}>
           <TableHead>
             <TableRow>
@@ -142,6 +166,7 @@ class App extends Component {
           
         </TableContainer>
           <button onClick={this.togglePage}>Back to Products</button>
+          <button onClick={this.finishOrder}>Finish Order</button>
         </div>}
         
       </div>)
