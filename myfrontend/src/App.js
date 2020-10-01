@@ -98,7 +98,7 @@ class App extends Component {
           showProductListPage: !this.state.showProductListPage,
           showCheckoutPage: !this.state.showCheckoutPage,
         });
-        console.log("Good");
+        console.log("Data compiled and page switched");
       }
     }) 
 
