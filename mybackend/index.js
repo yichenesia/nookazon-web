@@ -6,6 +6,10 @@ app.use(cors())
 const port = 5000
 const fs = require('fs');
 
+app.get('/', function (req, res) {
+  res.send('Home page reached!')
+})
+
 app.post('/saveuserorder', (req, res) => {
   let body = [];
   req.on('data', (chunk) => {
@@ -18,7 +22,7 @@ app.post('/saveuserorder', (req, res) => {
     var items = JSON.parse(rawdata);  //parse the JSON
     items.push({ 
         "id": (new Date().getTime()), "userOrder": parsedBody
-    });
+    }); // Push new item into the json string
 
     var txt = JSON.stringify(items);  //reserialize to JSON
 
@@ -28,7 +32,7 @@ app.post('/saveuserorder', (req, res) => {
         return res.json({"status": "failed"});
       }
       return res.json({"status": "ok"});
-      //file written successfully
+      // New user order has been written into database successfully
     })
   });
 })
@@ -37,11 +41,10 @@ app.get('/productlist', (req, res) => {
     let rawdata = fs.readFileSync('productlist.json');
     let items = JSON.parse(rawdata);
 
-    
-  console.log(`Return product list: `)
+  // console.log(`Return product list: `)
   res.send(items["list"])
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Example app listening at Port: ${port}`)
   })
