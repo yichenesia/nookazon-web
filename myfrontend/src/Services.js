@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const rootURL = "http://localhost:5000/"
+const rootURL = "https://fast-wildwood-77857.herokuapp.com/"
 
 export class Services {
     getproductlist (callback) {
