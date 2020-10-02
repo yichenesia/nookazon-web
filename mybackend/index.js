@@ -3,7 +3,7 @@ const express = require('express')
 const app = express()
 app.use(cors())
 
-const port = 5000
+const port = process.env.PORT || 5000
 const fs = require('fs');
 
 app.get('/', function (req, res) {
