@@ -3,7 +3,7 @@ Testing merging into master branch and deployment:
 Issue with deploying to Heroku:
     Your account has reached its concurrent builds limit        
 
-    Attempting to resolve by resetting
+    Attempting to resolve by resetting dyno
 
 
-Ver 0.0.9
+Ver 0.1.0
