@@ -20,8 +20,7 @@ jobs:
       with:
         node-version: '12.x'
     - run: npm install --prefix mybackend 
-    - run: npm start --prefix mybackend
-    - run: npm test
+    - run: npm test --prefix mybackend 
       env:
         CI: true
   deploy:
