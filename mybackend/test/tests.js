@@ -5,7 +5,7 @@ const { expect } = chai
 
 chai.use(chaiHttp)
 
-it('Homepage access success', async () => {
+it('Homepage access does not exist', () => {
     chai.request('https://a1-nookazon-backend.herokuapp.com/')
             .get('/')
             .end(function (err, res) {

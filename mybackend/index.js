@@ -8,7 +8,7 @@ const fs = require('fs');
 
 app.get('/', function (req, res) {
   res.status(200).send({ "success": 200});
-  res.send('Home page reached!')
+
 })
 
 app.post('/saveuserorder', (req, res) => {
