@@ -1,3 +1,9 @@
 Testing merging into master branch and deployment:
 
-Ver 0.0.8
+Issue with deploying to Heroku:
+    Your account has reached its concurrent builds limit        
+
+    Attempting to resolve by resetting
+
+
+Ver 0.0.9
