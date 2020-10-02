@@ -10,7 +10,7 @@ it('Homepage access success', async () => {
             .get('/')
             .end(function (err, res) {
                 const result = res.statusCode
-                expect(result).to.equal(200)
+                expect(result).to.equal(404)
                 
             });
 
