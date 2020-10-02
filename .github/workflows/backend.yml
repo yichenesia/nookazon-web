@@ -4,16 +4,16 @@ on:
   push:
     branches:
       - master
+    paths:
+      - "mybackend/**"
+      - ".github/workflows/backend.yml"
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest 
-    steps: 
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.5.7 # This is the action that we'll be using
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "fast-wildwood-77857" #Must be unique in Heroku
-          heroku_email: "yichenesia@gmail.com"
-          appdir: "mybackend" # <- This will point to the api folder in your project
-          buildpack: "https://github.com/timanovsky/subdir-heroku-buildpack.git"
+      - name: Add backend remote origin
+        run: git remote add heroku-backend https://heroku:${{ secrets.HEROKU_API_TOKEN }}@git.heroku.com/${{ secrets.HEROKU_BACKEND_APP_NAME }}.git
+      - name: Deploy backend to Heroku
+        run: git push heroku-backend `git subtree split --prefix backend master`:refs/heads/master --force
