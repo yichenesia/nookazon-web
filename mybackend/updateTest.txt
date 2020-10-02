@@ -6,4 +6,4 @@ Issue with deploying to Heroku:
     Attempting to resolve by resetting dyno
 
 
-Ver 0.1.0
+Ver 0.1.1
