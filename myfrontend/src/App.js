@@ -5,10 +5,14 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import {Services} from './Services';
 import CartItem from './CartItem';
-
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 var services = new Services();
 
@@ -111,7 +115,41 @@ class App extends Component {
   render(){
     return(
       <div className="App">
-        <div><header><h1 className="header">NOOKAZON</h1></header></div>
+        <Container>
+          <Row className="justify-content-center">
+            <Col xs={12} md={12}>
+              <div><header><h1>NOOKAZON</h1></header></div>
+            </Col>
+          </Row>
+          {this.state.showProductListPage &&
+          <div><Row >
+              <div className="relative"><h2>Please enter your username: </h2></div>
+            
+              <input type="text" name="name" value={this.state.username} onChange={this.handleUsernameChange}/>
+            </Row>
+            <Row className="justify-content-center">{this.state.productlist.map((value, index) => (<Col xs={12} md={6}><CartItem data={value}/></Col>))}</Row>
+              
+            <Row><button className="submit" onClick={this.togglePage}>Checkout</button></Row></div>   
+          }
+          
+          <Row>
+            
+          </Row>
+
+          <Row>
+            <Col xs={6} md={4}>
+              .col-xs-6 .col-md-4
+            </Col>
+            <Col xs={6} md={4}>
+              .col-xs-6 .col-md-4
+            </Col>
+            <Col xs={6} md={4}>
+              .col-xs-6 .col-md-4
+            </Col>
+          </Row>
+        </Container>
+
+        
         {this.state.showProductListPage &&
         <div>
           <div className="relative"><label><h2>Please enter your username: </h2></label></div>
