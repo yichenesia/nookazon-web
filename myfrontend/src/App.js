@@ -175,14 +175,14 @@ class App extends Component {
             ))}
             <TableRow>
                 <TableCell component="th" scope="row">
-                 Total
+                <span className="font-weight-bold">Total</span>
                 </TableCell>
                 <TableCell align="right"></TableCell>
                 <TableCell align="right"></TableCell>
-                <TableCell align="right">${this.state.total.subtotal}</TableCell>
-                <TableCell align="right">${this.state.total.tax}</TableCell>
-                <TableCell align="right">${this.state.total.linetotal}</TableCell>
-                <TableCell align="right">${this.state.total.yousave}</TableCell>
+                <TableCell align="right"><span className="font-weight-bold">${this.state.total.subtotal}</span></TableCell>
+                <TableCell align="right"><span className="font-weight-bold">${this.state.total.tax}</span></TableCell>
+                <TableCell align="right"><span className="font-weight-bold">${this.state.total.linetotal}</span></TableCell>
+                <TableCell align="right"><span className="font-weight-bold">${this.state.total.yousave}</span></TableCell>
               </TableRow>
           </TableBody>
           
