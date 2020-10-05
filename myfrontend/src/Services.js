@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 
-// const rootURL = "localhost:5000"
+// const rootURL = "http://localhost:5000/"
 const rootURL = "https://a1-nookazon-backend.herokuapp.com/"
 
 export class Services {
