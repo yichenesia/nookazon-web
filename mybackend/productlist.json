@@ -1,7 +1,9 @@
 {
-   "list": [{"id": 1,"name": "Tom Nook", "price": 300, "img": "./assets/tom.png", "count" : 0, "tax": 0, "subtotal": 0, "linetotal": 0, "yousave": 0},
+   "list": [{"id": 1,"name": "Tom", "price": 300, "img": "./assets/tom.png", "count" : 0, "tax": 0, "subtotal": 0, "linetotal": 0, "yousave": 0},
     {"id": 2, "name": "Isabelle", "price": 400, "img": "./assets/isabelle.png", "count" : 0, "tax": 0, "subtotal": 0,  "linetotal": 0, "yousave": 0 },
     {"id": 3,"name": "Lyle", "price": 500, "img": "./assets/lyle.png", "count" : 0, "tax": 0, "subtotal": 0,  "linetotal": 0, "yousave": 0},
-    {"id": 3,"name": "K.K. Slider", "price": 600, "img": "./assets/kk.png", "count" : 0, "tax": 0, "subtotal": 0,  "linetotal": 0, "yousave": 0}
+    {"id": 4,"name": "K.K.", "price": 1200, "img": "./assets/kk.png", "count" : 0, "tax": 0, "subtotal": 0,  "linetotal": 0, "yousave": 0},
+    {"id": 5,"name": "Wilbur", "price": 400, "img": "./assets/wilbur.png", "count" : 0, "tax": 0, "subtotal": 0,  "linetotal": 0, "yousave": 0},
+    {"id": 6,"name": "Mabel", "price": 300, "img": "./assets/mabel.png", "count" : 0, "tax": 0, "subtotal": 0,  "linetotal": 0, "yousave": 0}
 ]
 }
