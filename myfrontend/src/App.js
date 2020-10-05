@@ -8,9 +8,24 @@ import Paper from '@material-ui/core/Paper';
 import './App.css';
 import {Services} from './Services';
 import CartItem from './CartItem';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 var services = new Services();
+
+const ColoredLine = ({ color, height }) => (
+  <hr
+      style={{
+          color: color,
+          backgroundColor: color,
+          height: height
+      }}
+  />
+);
 
 class App extends Component {
   constructor(){
@@ -110,6 +125,7 @@ class App extends Component {
 
   render(){
     return(
+      
       <div className="App">
         <div><header><h1 className="header">NOOKAZON</h1></header></div>
         {this.state.showProductListPage &&
@@ -117,25 +133,30 @@ class App extends Component {
           <div className="relative"><label><h2>Please enter your username: </h2></label></div>
           
           <input type="text" name="name" value={this.state.username} onChange={this.handleUsernameChange}/>
-          {this.state.productlist.map((value, index) => (<CartItem data={value}/>))}
-
-          <button className="submit" onClick={this.togglePage}>Checkout</button>
+          <Container>
+          <ColoredLine color="blue" height="5"/>
+          <Row>
+            {this.state.productlist.map((value, index) => (<Col class="sm md={4}"><CartItem data={value} /></Col>))}
+          </Row>
+          </Container>
+          <Button variant="warning" onClick={this.togglePage}>Checkout</Button>
         </div>}
 
         {this.state.showCheckoutPage && <div>
         <button className="discount" onClick={this.handleDiscountAll}>Add 50% Discount to all items</button>
         <div><label><h2>Username: {this.state.username}</h2></label></div>
         
+        <Container>
         <TableContainer component={Paper}>
           <TableHead>
             <TableRow>
-              <TableCell>Product Name</TableCell>
-              <TableCell align="right">Price</TableCell>
-              <TableCell align="right">Amount</TableCell>
-              <TableCell align="right">Subtotal</TableCell>
-              <TableCell align="right">Tax</TableCell>
-              <TableCell align="right">Line Total</TableCell>
-              <TableCell align="right">You Save</TableCell>
+              <TableCell><span className="font-weight-bold">Product Name</span></TableCell>
+              <TableCell align="center"><span className="font-weight-bold">Price</span></TableCell>
+              <TableCell align="center"><span className="font-weight-bold">Amount</span></TableCell>
+              <TableCell align="center"><span className="font-weight-bold">Subtotal</span></TableCell>
+              <TableCell align="center"><span className="font-weight-bold">Tax</span></TableCell>
+              <TableCell align="center"><span className="font-weight-bold">Line Total</span></TableCell>
+              <TableCell align="center"><span className="font-weight-bold">You Save</span></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -166,9 +187,11 @@ class App extends Component {
           </TableBody>
           
         </TableContainer>
-          <button className="back" onClick={this.togglePage}>Back to Products</button>
-          <button className="submit2" onClick={this.finishOrder}>Finish Order</button>
-        </div>}
+        </Container>
+          <Button variant="primary" onClick={this.togglePage}>Back to Products</Button>
+          <Button variant="secondary" onClick={this.finishOrder}>Finish Order</Button>
+        </div>
+        }
         
       </div>)
   }
