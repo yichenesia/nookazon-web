@@ -33,7 +33,7 @@ class CartItem extends Component {
 
     render(){
     return (
-        <Card class="text-center">
+        <Card className="text-center">
             <Card.Body>
                 <Card.Title>{this.props.data.name}</Card.Title>
 
