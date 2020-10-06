@@ -154,7 +154,7 @@ class App extends Component {
               <TableCell align="center"><span className="font-weight-bold">Price</span></TableCell>
               <TableCell align="center"><span className="font-weight-bold">Amount</span></TableCell>
               <TableCell align="center"><span className="font-weight-bold">Subtotal</span></TableCell>
-              <TableCell align="center"><span className="font-weight-bold">Tax</span></TableCell>
+              <TableCell align="center"><span className="font-weight-bold">Tax (13%)</span></TableCell>
               <TableCell align="center"><span className="font-weight-bold">Line Total</span></TableCell>
               <TableCell align="center"><span className="font-weight-bold">You Save</span></TableCell>
             </TableRow>
@@ -188,8 +188,8 @@ class App extends Component {
           
         </TableContainer>
         </Container>
-          <Button variant="primary" onClick={this.togglePage}>Back to Products</Button>
-          <Button variant="secondary" onClick={this.finishOrder}>Finish Order</Button>
+          <Button variant="danger" onClick={this.togglePage}>Back to Products</Button>
+          <Button variant="success" onClick={this.finishOrder}>Finish Order</Button>
         </div>
         }
         
