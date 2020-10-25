@@ -1,0 +1,26 @@
+Web app (18):
+Simple UI with a few item options to be added to cart (show currently how many items are in the cart).
+Checkout page shows subtotal of each item and total.
+Implemented discount.
+Good steps to reproduce. 
+
+
+
+Web report (25.5): 
+Have some comparisons for front-end/back-end/database technologies.
+Included some links for resources used.
+
+Web CI/CD (bonus): 7.5
+
+
+Mobile app (18):
+Similar comments as web app.
+
+
+Mobile report (24):
+Better to submit report in pdf format or .md file.
+Have some comparisons for front-end/back-end/database technologies, (would be good to compare with native development for front end as well).
+
+Mobile  CI/CD (bonus): 4.5
+
+Total: 97.5
